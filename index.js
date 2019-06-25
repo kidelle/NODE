@@ -1,30 +1,19 @@
-const characters = [
-    {
-    name: "Spike",
-    show: "Cowboy Bebop",
-    },
-    {
-        name: "L",
-        show: "Death Note"
-    },
-    {
-        name: "Goku",
-        show: "Dragonball Z"
-    },
-    {
-        name: "Gon",
-        show: "Hunter X Hunter"
-    }
-]
+const moduleStuff = require('./anime.module');
+const characterList = moduleStuff.characters;
 
+
+// I wanna call the sayHello function from the moduleStuff
+// but it is exported as 'hello' in the object
+moduleStuff.hello('Playfair');
 
 // For loop to go through the array and write to the console
 // something like "Spike is from Cowboy Bebop".
 
 
 // template literal OR string concatenation
-for (character of characters){
+for (character of characterList){
     console.log(`${character.name} is from ${character.show}`);
+    console.log(character.name + '  is from ' + character.show);
 }
 
 // node index.js prints to terminal
